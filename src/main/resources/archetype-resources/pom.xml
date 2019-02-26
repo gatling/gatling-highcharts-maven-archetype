@@ -9,92 +9,32 @@
   <properties>
     <maven.compiler.source>${maven.compiler.source}</maven.compiler.source>
     <maven.compiler.target>${maven.compiler.target}</maven.compiler.target>
-    <scala.version>${scala.version}</scala.version>
     <encoding>${encoding}</encoding>
 
     <gatling.version>${gatling.version}</gatling.version>
-
-    <scala-maven-plugin.version>${scala-maven-plugin.version}</scala-maven-plugin.version>
     <gatling-maven-plugin.version>3.0.1</gatling-maven-plugin.version>
   </properties>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>io.gatling</groupId>
-        <artifactId>gatling-app</artifactId>
-        <version>\${gatling.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.gatling</groupId>
-        <artifactId>gatling-recorder</artifactId>
-        <version>\${gatling.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.gatling.highcharts</groupId>
-        <artifactId>gatling-charts-highcharts</artifactId>
-        <version>\${gatling.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.scala-lang</groupId>
-        <artifactId>scala-library</artifactId>
-        <version>\${scala.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <dependencies>
     <dependency>
       <groupId>io.gatling.highcharts</groupId>
       <artifactId>gatling-charts-highcharts</artifactId>
+      <version>\${gatling.version}</version>
     </dependency>
     <dependency>
       <groupId>io.gatling</groupId>
       <artifactId>gatling-app</artifactId>
+      <version>\${gatling.version}</version>
     </dependency>
     <dependency>
       <groupId>io.gatling</groupId>
       <artifactId>gatling-recorder</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
+      <version>\${gatling.version}</version>
     </dependency>
   </dependencies>
 
   <build>
-    <testSourceDirectory>src/test/scala</testSourceDirectory>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>net.alchim31.maven</groupId>
-          <artifactId>scala-maven-plugin</artifactId>
-          <version>\${scala-maven-plugin.version}</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
     <plugins>
-      <plugin>
-        <groupId>net.alchim31.maven</groupId>
-        <artifactId>scala-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>testCompile</goal>
-            </goals>
-            <configuration>
-              <args>
-                <arg>-target:jvm-1.8</arg>
-                <arg>-deprecation</arg>
-                <arg>-feature</arg>
-                <arg>-unchecked</arg>
-                <arg>-language:implicitConversions</arg>
-                <arg>-language:postfixOps</arg>
-              </args>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>io.gatling</groupId>
         <artifactId>gatling-maven-plugin</artifactId>
