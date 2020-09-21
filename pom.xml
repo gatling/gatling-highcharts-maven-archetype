@@ -9,7 +9,7 @@
 
     <groupId>io.gatling.highcharts</groupId>
     <artifactId>gatling-highcharts-maven-archetype</artifactId>
-    <version>3.4.0</version>
+    <version>3.4.1-SNAPSHOT</version>
     <name>gatling-highcharts-maven-archetype</name>
     <description>gatling-highcharts-maven-archetype</description>
 
