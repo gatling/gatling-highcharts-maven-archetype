@@ -12,7 +12,7 @@
     <encoding>${encoding}</encoding>
 
     <gatling.version>${gatling.version}</gatling.version>
-    <gatling-maven-plugin.version>3.1.0</gatling-maven-plugin.version>
+    <gatling-maven-plugin.version>3.1.1</gatling-maven-plugin.version>
   </properties>
 
   <dependencies>
